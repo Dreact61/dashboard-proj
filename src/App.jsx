@@ -89,6 +89,7 @@ const Dashboard = () => {
             <p>Email: {email}</p>
             <p>Phone number: {phone}</p>
           </div>
+          <button className={classes.dashboardBtn} style={{marginTop:"0.5rem"}} type="button">Edit</button>
         </div>
         
         <div className={classes.dashboardEl}>
@@ -101,9 +102,10 @@ const Dashboard = () => {
 
         <div className={classes.dashboardEl}>
           <h3>Balance</h3>
-          <div className={classes.container}>
+          <div className={classes.container} style={{alignItems:'center', fontWeight:"900"}}>
             <p>${balance.toFixed(2)}</p>
           </div>
+          <button className={classes.dashboardBtn} type='button'>Check history</button>
         </div>
 
         <div className={classes.dashboardEl && classes.notes}>
