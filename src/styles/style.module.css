@@ -1,0 +1,61 @@
+.mainRoot {
+    display: grid;
+    background-color: #b37575;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-areas: 'data time balance'
+                         'notes notes notes';
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.mainRoot > * {
+    font-weight: 500;
+    color: black;
+}
+
+.dashboardEl {
+    display: flex;
+    flex-direction: column;
+    justify-content: first baseline;
+    align-items: center;
+    background-color: #ffffffa6;
+    padding: 1rem;
+}
+
+.dashboardBtn {
+    height: 2rem;
+    width: 50%;
+    background-color: #e6aaaa;
+    border-color: #f8bfbf;
+    cursor: pointer;
+}
+
+.dashboardBtn:hover {
+    transition: 0.4s;
+    transform: scaleX(1.01);
+    box-shadow: 3px 3px 3px 3px #e6aaaa49;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+}
+
+.notes {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: first baseline;
+    align-items: center;
+    background-color: #ffffffa6;
+    padding: 1rem;
+    grid-area: notes;
+}
+
+.dashboardEl > h3 {
+    align-self: center;
+}
