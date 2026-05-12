@@ -9,7 +9,7 @@
     gap: 1rem;
 }
 
-.mainRoot > * {
+.mainRoot, .settingsContainer > * {
     font-weight: 500;
     color: black;
 }
@@ -25,7 +25,7 @@
 
 .dashboardBtn {
     height: 2rem;
-    width: 50%;
+    width: 100%;
     background-color: #e6aaaa;
     border-color: #f8bfbf;
     cursor: pointer;
@@ -62,11 +62,26 @@
     align-self: center;
 }
 
-/*--------------------------------------------------------------------*/
+/*-------------------------------Настройки дешборда------------------------------------*/
 
 .settingsContainer {
-    display: grid;
+    display: flex;
     background-color: #b37575;
     padding: 1rem;
     gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+.settingsContainer > h3 {
+    grid-area: h3;
+}
+
+.settingsBtn {
+    grid-area: button;
+    height: 2rem;
+    width: 80%;
+}
+
+.settingsInp {
+    height: auto;
 }
