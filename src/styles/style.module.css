@@ -61,3 +61,12 @@
 .dashboardEl > h3 {
     align-self: center;
 }
+
+/*--------------------------------------------------------------------*/
+
+.settingsContainer {
+    display: grid;
+    background-color: #b37575;
+    padding: 1rem;
+    gap: 1rem;
+}

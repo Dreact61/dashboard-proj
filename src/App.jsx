@@ -1,11 +1,12 @@
 import './App.css'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import classes from './styles/style.module.css'
+import { Link } from 'react-router';
 
 
-const useDashboardStore = create(
+export const useDashboardStore = create(
   persist(
     (set) => ({
       values: {
@@ -56,6 +57,8 @@ const useDashboardStore = create(
 );
 
 const Dashboard = () => {
+  const [isMainOn, setIsMainOn] = useState(true)
+
   const { values, timeTick, dayTick } = useDashboardStore();
   const { username, lastName, email, phone, id, time, day, balance, notes } = values;
 
@@ -89,7 +92,9 @@ const Dashboard = () => {
             <p>Email: {email}</p>
             <p>Phone number: {phone}</p>
           </div>
-          <button className={classes.dashboardBtn} style={{marginTop:"0.5rem"}} type="button">Edit</button>
+          <button className={classes.dashboardBtn} style={{marginTop:"0.5rem"}} type="button">
+            <Link to="/settings" style={{fontStyle:"normal"}}>Edit</Link>
+          </button>
         </div>
         
         <div className={classes.dashboardEl}>
