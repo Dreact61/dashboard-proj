@@ -5,7 +5,7 @@ import classes from "../styles/style.module.css";
 
 
 export default function Settings() {
-  const { values } = useDashboardStore();
+  const { values, setUserName, setLastName, setEmail, setPhoneNumber } = useDashboardStore();
   const { username, lastName, email, phone } = values;
 
     
@@ -31,6 +31,7 @@ export default function Settings() {
               id="change-username"
               placeholder={username}
               value={username}
+              onChange={(e) => setUserName(e.target.value)}
               required
             />
             <label htmlFor="change-lastname">New last name:</label>
@@ -40,6 +41,7 @@ export default function Settings() {
               id="change-lastname"
               placeholder={lastName}
               value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
               required
             />
             <label htmlFor="change-email">New email:</label>
@@ -49,6 +51,7 @@ export default function Settings() {
               id="change-email"
               placeholder={email}
               value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
             <label htmlFor="change-phone">New phone number:</label>
@@ -58,6 +61,7 @@ export default function Settings() {
               id="change-phone"
               placeholder={phone}
               value={phone}
+              onChange={(e) => setPhoneNumber(e.target.value)}
               required
             />
           </div>

@@ -2,7 +2,7 @@ import './App.css'
 import { useEffect } from 'react';
 import classes from './styles/style.module.css'
 import { Link } from 'react-router';
-import { useDashboardStore } from './components/dashboardStore';
+import { useDashboardStore } from './components/dashboardStore.ts';
 
 const Dashboard = () => {
   const { values, timeTick, dayTick } = useDashboardStore();
@@ -38,7 +38,7 @@ const Dashboard = () => {
             <p>Email: {email}</p>
             <p>Phone number: {phone}</p>
           </div>
-            <Link to="/settings" style={{fontStyle:"normal"}}>
+            <Link to="/settings" style={{fontStyle:"normal", width:"100%"}}>
               <button className={classes.dashboardBtn} style={{marginTop:"0.5rem"}} type="button">
                 Edit
               </button>
@@ -56,9 +56,12 @@ const Dashboard = () => {
         <div className={classes.dashboardEl}>
           <h3>Balance</h3>
           <div className={classes.container} style={{alignItems:'center', fontWeight:"900"}}>
-            <p>${balance.toFixed(2)}</p>
+            <p>${Number(balance).toFixed(2)}</p>
           </div>
-          <button className={classes.dashboardBtn} type='button'>Check history</button>
+          <Link to="/balance" style={{fontStyle:"normal", width:"100%"}}>
+            <button className={classes.dashboardBtn} type='button'>Balance operations</button>
+          </Link>
+          
         </div>
 
         <div className={classes.dashboardEl && classes.notes}>

@@ -85,3 +85,30 @@
 .settingsInp {
     height: auto;
 }
+
+/*------------------------------Настройки страницы баланса----------------------------------*/
+
+.balanceMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    width: 100%;
+    font-weight: 700;
+}
+
+.operationDiv {
+    gap: 0.6rem;
+    flex-direction: column;
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+
+.operationLog {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    
+}

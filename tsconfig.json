@@ -15,7 +15,16 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "module": "ESNext",
-    "moduleResolution": "bundler"
+    "moduleResolution": "bundler",
+    "compilerOptions": {
+      "baseUrl": "..",
+      "paths": {
+      "src/*": ["src/*"]
+      }
+      }
+      
+      
+      
   },
   "include": ["src"]               // если код в папке src
 }
