@@ -47,7 +47,7 @@ const Dashboard = () => {
         
         <div className={classes.dashboardEl}>
           <h3>Current Time:</h3>
-          <div className={classes.container}>      
+          <div className={classes.container} style={{alignItems:"center", gap:"1rem"}}>      
             <p>Local time: {time}</p>
             <p>Date: {day}</p>
           </div>  
@@ -68,12 +68,14 @@ const Dashboard = () => {
           <h3>User notes</h3>
           <div className={classes.container}>
             <ul>
-              {notes.map((note, index) => (
-                <li key={index}>{note}</li>
-              ))}
+              {notes && notes.length > 0 ? notes.map(note => (
+                <li key={note.id}>{note.text}</li>
+              )) : <li>You have not any notes yet.</li>}
             </ul>
           </div>
-            <button className={classes.dashboardBtn} type="button">Edit notes</button>
+          <Link to="/notes" style={{fontStyle:"normal", width:"100%"}}>
+              <button className={classes.dashboardBtn} type="button">Edit notes</button>
+          </Link>
         </div>
 
       </main>

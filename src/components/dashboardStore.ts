@@ -9,6 +9,11 @@ export type Transaction = {
   operationId: number
 }
 
+export type Note = {
+  text: string,
+  id: number
+}
+
 export interface DashboardSettings {
   username: string,
   lastName: string,
@@ -18,7 +23,7 @@ export interface DashboardSettings {
   time: string,
   day: string,
   balance: number,
-  notes: string[],
+  notes: Note[],
   transactions: Transaction[]
 }
 
@@ -33,7 +38,8 @@ export interface DashboardStore {
   balanceDeposit: (num: number) => void,
   balanceWithdraw: (num: number) => void,
   trackTransactionsHistory: (updater: (prev: Transaction[]) => Transaction[]) => void,
-  trackNotes: (note: string) => void
+  trackNotes: (noteText: string) => void,
+  noteDelete: (noteToDelete: Note) => void
 }
 
 export const useDashboardStore = create<DashboardStore>()(
@@ -48,7 +54,7 @@ export const useDashboardStore = create<DashboardStore>()(
           time: new Date().toLocaleTimeString(),
           day: new Date().toLocaleDateString(),
           balance: 0,
-          notes: [],
+          notes: [{text: 'Note', id:0}],
           transactions: []
         },
   
@@ -106,13 +112,21 @@ export const useDashboardStore = create<DashboardStore>()(
             }
           })),
   
-        trackNotes: (note) => 
+        trackNotes: (noteText) => 
           set((state) => ({
             values: { 
               ...state.values, 
-              notes: [...state.values.notes, note]
+              notes: [...state.values.notes, {text: noteText, id: state.values.notes.length + 1}]
             }
           })),
+
+        noteDelete: (noteToDelete) => 
+          set((state) => ({
+            values: {
+              ...state.values,
+              notes: state.values.notes.filter((note) => note.id !== noteToDelete.id)
+            }
+          }))
       }),
       { name: 'dashboard-storage' }
     )

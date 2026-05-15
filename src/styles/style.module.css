@@ -1,6 +1,11 @@
+@font-face {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    src: url();
+}
+
 .mainRoot {
     display: grid;
-    background-color: #b37575;
+    background-color: #2b2b2bbd;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(1, 1fr);
     grid-template-areas: 'data time balance'
@@ -11,7 +16,7 @@
 
 .mainRoot, .settingsContainer > * {
     font-weight: 500;
-    color: black;
+    color: rgba(255, 255, 255, 0.884);
 }
 
 .dashboardEl {
@@ -19,22 +24,26 @@
     flex-direction: column;
     justify-content: first baseline;
     align-items: center;
-    background-color: #ffffffa6;
+    background-color: #1f1f1f;
+    border: 1px ridge rgba(255, 255, 0, 0.637);
     padding: 1rem;
 }
 
 .dashboardBtn {
     height: 2rem;
     width: 100%;
-    background-color: #e6aaaa;
-    border-color: #f8bfbf;
+    background-color: #ffd86e;
+    border-color: #f4ff8e;
     cursor: pointer;
+    color: #000;
+    font: 1em system-ui;
 }
 
 .dashboardBtn:hover {
-    transition: 0.4s;
-    transform: scaleX(1.01);
-    box-shadow: 3px 3px 3px 3px #e6aaaa49;
+    transition: 0.2s;
+    box-shadow: 3px 3px 3px 3px #e6e5aa07;
+    background-color: #ffffff00;
+    color: white;
 }
 
 .container {
@@ -53,7 +62,8 @@
     flex-direction: column;
     justify-content: first baseline;
     align-items: center;
-    background-color: #ffffffa6;
+    background-color: #1f1f1f;
+    border: 1px ridge rgba(255, 255, 0, 0.637);
     padding: 1rem;
     grid-area: notes;
 }
@@ -66,24 +76,11 @@
 
 .settingsContainer {
     display: flex;
-    background-color: #b37575;
+    background-color: #2b2b2bbd;
     padding: 1rem;
     gap: 1rem;
     justify-content: center;
     align-items: center;
-}
-.settingsContainer > h3 {
-    grid-area: h3;
-}
-
-.settingsBtn {
-    grid-area: button;
-    height: 2rem;
-    width: 80%;
-}
-
-.settingsInp {
-    height: auto;
 }
 
 /*------------------------------Настройки страницы баланса----------------------------------*/
@@ -110,5 +107,5 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    
+
 }
