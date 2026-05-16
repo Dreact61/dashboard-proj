@@ -46,15 +46,15 @@ export const useDashboardStore = create<DashboardStore>()(
     persist(
       (set) => ({
         values: {
-          username: 'Sawalda',
-          lastName: 'react',
-          email: 'example@whatever.com',
-          phone: '+1 900 100-00-00',
+          username: '',
+          lastName: '',
+          email: '',
+          phone: '',
           id: Math.floor(Math.random() * 10000000),
           time: new Date().toLocaleTimeString(),
           day: new Date().toLocaleDateString(),
           balance: 0,
-          notes: [{text: 'Note', id:0}],
+          notes: [],
           transactions: []
         },
   

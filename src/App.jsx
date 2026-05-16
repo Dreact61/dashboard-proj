@@ -6,7 +6,7 @@ import { useDashboardStore } from './components/dashboardStore.ts';
 
 const Dashboard = () => {
   const { values, timeTick, dayTick } = useDashboardStore();
-  const { username, lastName, email, phone, id, time, day, balance, notes } = values;
+  const { username, lastName, email, phone, id, time, day, balance, notes, apicall } = values;
 
   useEffect(() => {
     const tick = setInterval(() => {
@@ -26,17 +26,17 @@ const Dashboard = () => {
   
   return (
     <div>
-      <h1>Dashboard</h1>
+      <h1>Mini Dashboard Project</h1>
       <hr />
       <main className={classes.mainRoot}>
         <div className={classes.dashboardEl}>
           <h3>Personal Data:</h3>
-          <div className={classes.container}>
+          <div className={classes.container} style={{gap:"0.5rem", padding:"1rem"}}>
             <p>User id: {id}</p>
-            <p>Name: {username}</p>
-            <p>Last name: {lastName}</p>
-            <p>Email: {email}</p>
-            <p>Phone number: {phone}</p>
+            <p>Name: {username ? username : <p style={{color:"#666"}}>not provided</p>}</p>
+            <p>Last name: {lastName ? lastName : <p style={{color:"#666"}}>not provided</p>}</p>
+            <p>Email: {email ? email : <p style={{color:"#666"}}>not provided</p>}</p>
+            <p>Phone number: {phone ? phone : <p style={{color:"#666"}}>not provided</p>}</p>
           </div>
             <Link to="/settings" style={{fontStyle:"normal", width:"100%"}}>
               <button className={classes.dashboardBtn} style={{marginTop:"0.5rem"}} type="button">
@@ -54,7 +54,7 @@ const Dashboard = () => {
         </div>
 
         <div className={classes.dashboardEl}>
-          <h3>Balance</h3>
+          <h3>Balance:</h3>
           <div className={classes.container} style={{alignItems:'center', fontWeight:"900"}}>
             <p>${Number(balance).toFixed(2)}</p>
           </div>
@@ -77,7 +77,6 @@ const Dashboard = () => {
               <button className={classes.dashboardBtn} type="button">Edit notes</button>
           </Link>
         </div>
-
       </main>
     </div>
   )

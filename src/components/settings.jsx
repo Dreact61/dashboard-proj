@@ -23,47 +23,55 @@ export default function Settings() {
       >
         <div className={classes.dashboardEl} style={{width: "100%"}}>
           <h3>Change your personal info:</h3>
-          <div className={classes.container}>
-            <label htmlFor="change-username">New name:</label>
-            <input
-              className={classes.settingsInp}
-              type="text"
-              id="change-username"
-              placeholder={username}
-              value={username}
-              onChange={(e) => setUserName(e.target.value)}
-              required
-            />
-            <label htmlFor="change-lastname">New last name:</label>
-            <input
-              className={classes.settingsInp}
-              type="text"
-              id="change-lastname"
-              placeholder={lastName}
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-              required
-            />
-            <label htmlFor="change-email">New email:</label>
-            <input
-              className={classes.settingsInp}
-              type="email"
-              id="change-email"
-              placeholder={email}
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <label htmlFor="change-phone">New phone number:</label>
-            <input
-              className={classes.settingsInp}
-              type="text"
-              id="change-phone"
-              placeholder={phone}
-              value={phone}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-              required
-            />
+          <div className={classes.container} style={{display:"flex", padding:"1rem", gap:"1rem"}}>
+            <div style={{display:"flex", flexDirection:"row", justifyContent:"center", width:"100%", gap:"7rem"}}>
+              <label htmlFor="change-username">New name:</label>
+              <input
+                className={classes.settingsInp}
+                type="text"
+                id="change-username"
+                placeholder="John"
+                value={username}
+                onChange={(e) => setUserName(e.target.value)}
+                required
+              />
+            </div>
+            <div style={{display:"flex", flexDirection:"row", justifyContent:"center", width:"100%", gap:"5rem"}}>
+              <label htmlFor="change-lastname">New last name:</label>
+              <input
+                className={classes.settingsInp}
+                type="text"
+                id="change-lastname"
+                placeholder="Doe"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                required
+              />
+            </div>
+            <div style={{display:"flex", flexDirection:"row", justifyContent:"center", width:"100%", gap:"6.9rem"}}>
+              <label htmlFor="change-email">New email:</label>
+              <input
+                className={classes.settingsInp}
+                type="email"
+                id="change-email"
+                placeholder="example@whatever.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <div style={{display:"flex", flexDirection:"row", justifyContent:"center", width:"100%", gap:"2.6rem"}}>
+              <label htmlFor="change-phone">New phone number:</label>
+              <input
+                className={classes.settingsInp}
+                type="text"
+                id="change-phone"
+                placeholder="+X XXX XXX XX-XX"
+                value={phone}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+                required
+              />
+            </div>
           </div>
           <Link to="/" style={{width:"100%", fontStyle:"normal"}}>
 
