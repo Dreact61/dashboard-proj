@@ -39,8 +39,8 @@
 ## Как запустить
 
 ```bash
-git clone https://github.com/username/dashboard-project.git
-cd dashboard-project
+git clone https://github.com/Dreact61/dashboard-project.git
+cd dashboard-proj
 npm install
 npm run dev
 ```
