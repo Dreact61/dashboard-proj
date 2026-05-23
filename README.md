@@ -5,10 +5,10 @@
 
 ## Скриншоты
 
-![Главный экран](public/screenshots/Главная.png)
-![Настройки профиля](public/screenshots/Настройки.png)
-![История операций](public/screenshots/Баланс.png)
-![Заметки](public/screenshots/Заметки.png)
+![Главный экран](public/Главная.png)
+![Настройки профиля](public/Настройки.png)
+![История операций](public/Баланс.png)
+![Заметки](public/Заметки.png)
 
 ## Функционал
 
