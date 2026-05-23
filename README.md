@@ -1,16 +1,57 @@
-# React + Vite
+# Dashboard - персональный дашборд
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Персональный dashboard на React + TypeScript для управления пользовательскими данными, балансом и заметками.  
+Проект демонстрирует работу с глобальным состоянием, взаимодействие между экранами и обработку пользовательских действий.
 
-Currently, two official plugins are available:
+## Скриншоты
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Главный экран](public/screenshots/Главная.png)
+![Настройки профиля](public/screenshots/Настройки.png)
+![История операций](public/screenshots/Баланс.png)
+![Заметки](public/screenshots/Заметки.png)
 
-## React Compiler
+## Функционал
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Отображение текущей даты и времени.
+- Страница настроек с редактированием данных пользователя:
+  - имя;
+  - фамилия;
+  - почта;
+  - номер телефона.
+- Управление балансом:
+  - пополнение счета;
+  - снятие средств;
+  - история переводов и операций.
+- Заметки с возможностью добавления и удаления.
+- Сохранение всех данных в приложении после обновления страницы.
+- Переключение между разделами через роутинг.
+- Адаптивный и аккуратный интерфейс.
 
-## Expanding the ESLint configuration
+## Стек
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React.
+- TypeScript.
+- Zustand.
+- React Router.
+- Vite.
+- LocalStorage.
+
+## Как запустить
+
+```bash
+git clone https://github.com/username/dashboard-project.git
+cd dashboard-project
+npm install
+npm run dev
+```
+
+## Что реализовано
+
+В проекте сделан упор на практическую логику: хранение состояния пользователя, изменение баланса, работу с заметками, отображение истории действий и сохранение данных между перезагрузками.  
+Это показывает умение строить не просто интерфейс, а небольшое приложение с реальным сценарием использования.
+
+## Планы по развитию
+
+- Подключение API для получения актуальных данных.
+- Улучшение валидации форм.
+- Добавление смены темной и светлой темы.
